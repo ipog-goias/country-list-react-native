@@ -33,7 +33,7 @@ export default function App() {
         keyExtractor={ item => item.name.common} //keyExtractor diz à lista para usar os ids para as chaves react em vez da propriedade de chave padrão
         renderItem={({item}) => ( //item para para ser exibido
           <View style={styles.itemContainer}>
-            <Image style={styles.image} source={{ uri: item.flag }} />
+            <Text style={styles.flagText}>{item.flag}</Text>
             <Text
               onPress={()=> {
                 Alert.alert(`A capital do país ${item.name.common} é ${item.capital}`);
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   container: {
     //flex: 1,
     //backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'left',
     //justifyContent: 'center',
     //padding: 2
   },
@@ -64,6 +64,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 30,
     marginRight: 10, //Espaço entre a imagem e o texto
+  },
+  flagText:{
+    fontSize:32
   },
   text: {
     fontSize: 12,
